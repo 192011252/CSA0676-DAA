@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+	int n,a[20],i,high,low,mid,x;
+	printf("enter the number of elements:\n");
+	scanf("%d",&n);
+	printf("enter the elements in the array:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("enter the element to be found:\n");
+	scanf("%d",&x);
+	low=0;
+	high=n-1;
+	mid=(high+low)/2;
+	while(low<=high)
+	{
+		if(a[mid]>x)
+		{
+			high=mid-1;
+		}
+		else if(a[mid]==x)
+		{
+			printf("%d found at position %d",x,mid+1);
+			break;
+		}
+		else
+		{
+			low=mid+1;
+		}
+		mid=(high+low)/2;
+	}
+	if(low>high)
+	{
+		printf("element is not found in the array.\n");
+	}
+}

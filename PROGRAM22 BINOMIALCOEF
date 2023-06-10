@@ -1,0 +1,18 @@
+#include<stdio.h>
+int fact(n)
+{
+	if(n==0 || n==1)
+	return 1;
+	else
+	return (n*fact(n-1));
+}
+int main()
+{
+	int n,r,d,l,m,bin_coeff;
+	printf("enter value of n:");
+	scanf("%d",&n);
+	printf("enter value of r:");
+	scanf("%d",&r);
+	bin_coeff=fact(n)/(fact(r)*fact(n-r));
+	printf("binomial cofficient of %d c %d is: %d",n,r,bin_coeff);
+}
